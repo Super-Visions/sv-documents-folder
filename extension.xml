@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension format="1.0">
+  <extension_code>sv-document-folder</extension_code>
+  <version>0.1.0</version>
+  <label><![CDATA[Document folders]]></label>
+  <description><![CDATA[Add folder hierarchy to organise your documents]]></description>
+  <mandatory>false</mandatory>
+  <more_info_url>https://github.com/Super-Visions/sv-documents-folder</more_info_url>
+</extension>

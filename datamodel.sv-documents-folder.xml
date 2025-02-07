@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<itop_design xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="3.2">
+	<classes>
+		<class id="Document" _delta="must_exist">
+			<presentation>
+				<summary _delta="define_if_not_exists">
+					<items>
+						<item id="documenttype_id">
+							<rank>10</rank>
+						</item>
+						<item id="description">
+							<rank>20</rank>
+						</item>
+					</items>
+				</summary>
+			</presentation>
+		</class>
+		<class id="DocumentsFolder" _delta="define">
+			<parent>Document</parent>
+			<properties>
+				<category>bizmodel,searchable</category>
+				<abstract>false</abstract>
+				<db_table>documentsfolder</db_table>
+				<naming>
+					<attributes>
+						<attribute id="name"/>
+					</attributes>
+				</naming>
+				<style>
+					<icon>assets/img/icons8-documents-folder.svg</icon>
+				</style>
+				<reconciliation>
+					<attributes>
+						<attribute id="name"/>
+						<attribute id="org_id"/>
+						<attribute id="org_name"/>
+					</attributes>
+				</reconciliation>
+			</properties>
+			<fields>
+				<field id="document_list" xsi:type="AttributeLinkedSetIndirect">
+					<linked_class>lnkDocumentToFolder</linked_class>
+					<ext_key_to_me>folder_id</ext_key_to_me>
+					<ext_key_to_remote>document_id</ext_key_to_remote>
+				</field>
+			</fields>
+			<methods/>
+			<presentation>
+				<details>
+					<items>
+						<item id="name">
+							<rank>10</rank>
+						</item>
+						<item id="org_id">
+							<rank>20</rank>
+						</item>
+						<item id="status">
+							<rank>30</rank>
+						</item>
+						<item id="description">
+							<rank>40</rank>
+						</item>
+						<item id="document_list">
+							<rank>50</rank>
+						</item>
+						<item id="cis_list">
+							<rank>60</rank>
+						</item>
+					</items>
+				</details>
+				<list>
+					<items>
+						<item id="org_id">
+							<rank>10</rank>
+						</item>
+						<item id="status">
+							<rank>20</rank>
+						</item>
+					</items>
+				</list>
+				<summary>
+					<items>
+						<item id="description">
+							<rank>10</rank>
+						</item>
+						<item id="document_list">
+							<rank>20</rank>
+						</item>
+					</items>
+				</summary>
+			</presentation>
+		</class>
+		<class id="lnkDocumentToFolder" _delta="define">
+			<parent>cmdbAbstractObject</parent>
+			<properties>
+				<is_link>1</is_link>
+				<category>bizmodel</category>
+				<db_table>lnkdocumenttofolder</db_table>
+				<naming>
+					<attributes>
+						<attribute id="folder_name"/>
+						<attribute id="document_name"/>
+					</attributes>
+				</naming>
+				<reconciliation>
+					<attributes>
+						<attribute id="folder_id"/>
+						<attribute id="document_id"/>
+					</attributes>
+				</reconciliation>
+				<uniqueness_rules>
+					<rule id="no_duplicate">
+						<attributes>
+							<attribute id="document_id"/>
+							<attribute id="folder_id"/>
+						</attributes>
+						<disabled>false</disabled>
+						<is_blocking>true</is_blocking>
+					</rule>
+				</uniqueness_rules>
+			</properties>
+			<fields>
+				<field id="folder_id" xsi:type="AttributeExternalKey">
+					<sql>folder_id</sql>
+					<target_class>DocumentsFolder</target_class>
+					<is_null_allowed>false</is_null_allowed>
+					<on_target_delete>DEL_AUTO</on_target_delete>
+				</field>
+				<field id="folder_name" xsi:type="AttributeExternalField">
+					<extkey_attcode>folder_id</extkey_attcode>
+					<target_attcode>name</target_attcode>
+				</field>
+				<field id="document_id" xsi:type="AttributeExternalKey">
+					<sql>document_id</sql>
+					<target_class>Document</target_class>
+					<is_null_allowed>false</is_null_allowed>
+					<on_target_delete>DEL_AUTO</on_target_delete>
+				</field>
+				<field id="document_name" xsi:type="AttributeExternalField">
+					<extkey_attcode>document_id</extkey_attcode>
+					<target_attcode>name</target_attcode>
+				</field>
+			</fields>
+			<methods/>
+			<presentation>
+				<details>
+					<items>
+						<item id="folder_id">
+							<rank>10</rank>
+						</item>
+						<item id="document_id">
+							<rank>20</rank>
+						</item>
+					</items>
+				</details>
+				<search>
+					<items>
+						<item id="folder_id">
+							<rank>10</rank>
+						</item>
+						<item id="document_id">
+							<rank>20</rank>
+						</item>
+					</items>
+				</search>
+				<list>
+					<items>
+						<item id="folder_id">
+							<rank>10</rank>
+						</item>
+						<item id="document_id">
+							<rank>20</rank>
+						</item>
+					</items>
+				</list>
+			</presentation>
+		</class>
+	</classes>
+	<dictionaries>
+		<dictionary id="EN US">
+			<entries>
+				<entry id="Class:DocumentsFolder" _delta="define">Documents Folder</entry>
+				<entry id="Class:DocumentsFolder/Attribute:document_list" _delta="define">Documents</entry>
+				<entry id="Class:DocumentsFolder/Attribute:document_list+" _delta="define">All the documents in this folder</entry>
+				<entry id="Class:lnkDocumentToFolder" _delta="define">Link Folder / Document</entry>
+				<entry id="Class:lnkDocumentToFolder/Attribute:document_id" _delta="define">Document</entry>
+				<entry id="Class:lnkDocumentToFolder/Attribute:folder_id" _delta="define">Folder</entry>
+				<entry id="Class:lnkDocumentToFolder/Name" _delta="define">%1$s / %2$s</entry>
+			</entries>
+		</dictionary>
+	</dictionaries>
+	<menus/>
+	<user_rights>
+		<groups/>
+		<profiles/>
+	</user_rights>
+</itop_design>
