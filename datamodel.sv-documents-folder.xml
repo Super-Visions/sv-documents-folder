@@ -45,6 +45,15 @@
 				</field>
 			</fields>
 			<methods/>
+			<relations>
+				<relation id="contains">
+					<neighbours>
+						<neighbour id="document">
+							<attribute>document_list</attribute>
+						</neighbour>
+					</neighbours>
+				</relation>
+			</relations>
 			<presentation>
 				<details>
 					<items>
@@ -186,6 +195,9 @@
 				<entry id="Class:lnkDocumentToFolder/Attribute:document_id" _delta="define">Document</entry>
 				<entry id="Class:lnkDocumentToFolder/Attribute:folder_id" _delta="define">Folder</entry>
 				<entry id="Class:lnkDocumentToFolder/Name" _delta="define">%1$s / %2$s</entry>
+				<entry id="Relation:contains/Description" _delta="define">Hierarchy</entry>
+				<entry id="Relation:contains/DownStream" _delta="define">Containing…</entry>
+				<entry id="Relation:contains/UpStream" _delta="define">Contained by…</entry>
 			</entries>
 		</dictionary>
 	</dictionaries>

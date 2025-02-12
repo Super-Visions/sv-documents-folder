@@ -9,4 +9,12 @@ Be sure to enable the extension during setup.
 
 ## Preview
 
-![](assets/img/example.png "Documents Folder details view")
+### Details view
+
+![](assets/img/example-detail-view.png "Documents Folder details view")
+
+### Relation view
+
+In the actions menu of a Documents Folder, you can choose to view a relation of all documents contained in it.
+
+![](assets/img/example-relation.png "Documents Folder relation view")
