@@ -2,6 +2,13 @@
 <itop_design xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="3.2">
 	<classes>
 		<class id="Document" _delta="must_exist">
+			<fields>
+				<field id="folder_list" xsi:type="AttributeLinkedSetIndirect" _delta="define">
+					<linked_class>lnkDocumentToFolder</linked_class>
+					<ext_key_to_me>document_id</ext_key_to_me>
+					<ext_key_to_remote>folder_id</ext_key_to_remote>
+				</field>
+			</fields>
 			<presentation>
 				<summary _delta="define_if_not_exists">
 					<items>
@@ -188,6 +195,8 @@
 	<dictionaries>
 		<dictionary id="EN US">
 			<entries>
+				<entry id="Class:Document/Attribute:folder_list" _delta="define">Folders</entry>
+				<entry id="Class:Document/Attribute:folder_list+" _delta="define">All the folders containing this document</entry>
 				<entry id="Class:DocumentsFolder" _delta="define">Documents Folder</entry>
 				<entry id="Class:DocumentsFolder/Attribute:document_list" _delta="define">Documents</entry>
 				<entry id="Class:DocumentsFolder/Attribute:document_list+" _delta="define">All the documents in this folder</entry>
