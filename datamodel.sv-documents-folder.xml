@@ -73,14 +73,17 @@
 						<item id="status">
 							<rank>30</rank>
 						</item>
-						<item id="description">
+						<item id="documenttype_id">
 							<rank>40</rank>
 						</item>
-						<item id="document_list">
+						<item id="description">
 							<rank>50</rank>
 						</item>
-						<item id="cis_list">
+						<item id="document_list">
 							<rank>60</rank>
+						</item>
+						<item id="cis_list">
+							<rank>70</rank>
 						</item>
 					</items>
 				</details>
@@ -200,6 +203,8 @@
 				<entry id="Class:DocumentsFolder" _delta="define">Documents Folder</entry>
 				<entry id="Class:DocumentsFolder/Attribute:document_list" _delta="define">Documents</entry>
 				<entry id="Class:DocumentsFolder/Attribute:document_list+" _delta="define">All the documents in this folder</entry>
+				<entry id="Class:DocumentsFolder/Attribute:documenttype_id" _delta="define">Folder type</entry>
+				<entry id="Class:DocumentsFolder/Attribute:documenttype_name" _delta="define">Folder type name</entry>
 				<entry id="Class:lnkDocumentToFolder" _delta="define">Link Folder / Document</entry>
 				<entry id="Class:lnkDocumentToFolder/Attribute:document_id" _delta="define">Document</entry>
 				<entry id="Class:lnkDocumentToFolder/Attribute:folder_id" _delta="define">Folder</entry>
