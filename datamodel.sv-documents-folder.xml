@@ -99,11 +99,14 @@
 				</list>
 				<summary>
 					<items>
-						<item id="description">
+						<item id="documenttype_id">
 							<rank>10</rank>
 						</item>
-						<item id="document_list">
+						<item id="description">
 							<rank>20</rank>
+						</item>
+						<item id="document_list">
+							<rank>30</rank>
 						</item>
 					</items>
 				</summary>
