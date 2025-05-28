@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <extension format="1.0">
   <extension_code>sv-document-folder</extension_code>
-  <version>0.3.0</version>
+  <version>1.0.0</version>
   <label><![CDATA[Document folders]]></label>
   <description><![CDATA[Add folder hierarchy to organise your documents]]></description>
   <mandatory>false</mandatory>
