@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://rudnerbjoern.github.io/iTop-schema/extension.xsd"?>
 <extension format="1.0">
   <extension_code>sv-document-folder</extension_code>
   <version>1.0.0</version>
